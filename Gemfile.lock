@@ -279,7 +279,7 @@ DEPENDENCIES
   capybara
   debug
   importmap-rails
-  jbuilder
+  jbuilder (>= 2.13.0)
   puma (>= 6.4.3)
   rails (~> 7.2.1)
   rubocop-rails-omakase
