@@ -1,8 +1,6 @@
 <%= javascript_include_tag "turbo", type: "module" %>
 <h1><%= @article.title %></h1>
-
 <p><%= @article.body %></p>
-
 <ul>
   <li>
     <%= link_to "Edit", 
@@ -17,28 +15,7 @@
                 } %>
   </li>
 </ul>
-
 <h2>Comments:</h2>
-<% @article.comments.each do |comment| %>
-  <p>
-    <strong><%= comment.commenter %></strong> 
-  </p>
-  <p>
-    <%= comment.body %>
-  </p>
-<% end %>
-
+<%= render @article.comments %>
 <h2>Add a comment:</h2>
-<%= form_with model: [@article, @article.comments.build] do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render "comments/form", article: @article %>
