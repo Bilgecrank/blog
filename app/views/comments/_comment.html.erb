@@ -1,0 +1,10 @@
+<% unless comment.archived? %>
+  <p><strong><%= comment.commenter %></strong></p>
+  <p><%= comment.body %></p>
+  <p><%= link_to "DESTROY ME.",
+                 [comment.article, comment],
+                 data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                 } %></p>
+<% end %>

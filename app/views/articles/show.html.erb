@@ -1,7 +1,6 @@
+<%= javascript_include_tag "turbo", type: "module" %>
 <h1><%= @article.title %></h1>
-
 <p><%= @article.body %></p>
-
 <ul>
   <li>
     <%= link_to "Edit", 
@@ -16,3 +15,7 @@
                 } %>
   </li>
 </ul>
+<h2>Comments:</h2>
+<%= render @article.comments %>
+<h2>Add a comment:</h2>
+<%= render "comments/form", article: @article %>
