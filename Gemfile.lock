@@ -284,7 +284,7 @@ DEPENDENCIES
   rubocop-rails-omakase
   selenium-webdriver (>= 4.25.0)
   sprockets-rails
-  sqlite3 (>= 1.4)
+  sqlite3 (>= 2.1.0)
   stimulus-rails
   turbo-rails (>= 2.0.9)
   tzinfo-data
